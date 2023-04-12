@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Temperature Converter</h1>
+  <form>
+	<label for="input">Temperature in Fahrenheit:</label>
+	<input type="text" id="input">
+	<button type="submit">Convert</button>
+	<label for="output">Temperature in Celsius:</label>
+	<span id="output"></span>
+</form>
+
+	
+	<script>
+	const form = document.querySelector("form");
+	const input = document.querySelector("#input");
+	const output = document.querySelector("#output");
+	
+	form.addEventListener("submit", function(event) {
+		event.preventDefault();
+		
+		const fahrenheit = parseFloat(input.value);
+		const celsius = (fahrenheit - 32) * 5 / 9;
+		
+		output.textContent = celsius.toFixed(2);
+	});
+</script>
+
+</body>
+</html>
